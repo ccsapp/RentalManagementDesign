@@ -284,11 +284,11 @@ components:
         brand:
           type: string
           example: "Audi"
-          description: Data that specifies the brand name of the Vehicle manufacturer
+          description: Data that specifies the brand name of the manufacturer
         model:
           type: string
           example: "A3"
-          description: Data that specifies the particular type of a Vehicle
+          description: Data that specifies the particular type of car
       description: Overview of a car
     carAvailable:
       allOf:
@@ -480,7 +480,7 @@ components:
       type: string
       pattern: '^[A-HJ-NPR-Z0-9]{13}[0-9]{4}$'
       example: WDD1690071J236589
-      description: A Vehicle Identification Number (VIN) which uniquely identifies a Vehicle
+      description: A Vehicle Identification Number (VIN) which uniquely identifies a car
     rentalId:
       type: string
       pattern: '^[a-zA-Z0-9]{8}$'
