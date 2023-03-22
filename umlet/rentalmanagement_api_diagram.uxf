@@ -1,11 +1,12 @@
-<diagram program="umletino" version="15.0.0"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>568</x><y>64</y><w>384</w><h>136</h></coordinates><panel_attributes>&lt;&lt;application entity&gt;&gt;
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>568</x><y>64</y><w>384</w><h>152</h></coordinates><panel_attributes>&lt;&lt;application entity&gt;&gt;
 Rental
 -
 id: RentalId {unique}
-active: boolean
+state: State
 customer: Customer
 startDate: DateTime
 endDate: DateTime
+trunkAccessToke: TrunkAcessToken
 -
 grantTrunkAccess(validFrom: DateTime, validUntil: DateTime): TrunkAccessToken
 _getOverview(rentee: Customer): Rental[]_
@@ -40,10 +41,10 @@ m2=1
 identified by &gt;</panel_attributes><additional_attributes>240;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>848</x><y>248</y><w>136</w><h>56</h></coordinates><panel_attributes>&lt;&lt;application entity&gt;&gt;
 Customer
 -
-id: CustomerId {unique}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>904</x><y>112</y><w>104</w><h>152</h></coordinates><panel_attributes>lt=-
+id: CustomerId {unique}</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>904</x><y>128</y><w>104</w><h>136</h></coordinates><panel_attributes>lt=-
 m1=1
 m2=*
-</panel_attributes><additional_attributes>10;170;10;130;110;130;110;10;60;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1128</x><y>264</y><w>88</w><h>56</h></coordinates><panel_attributes>&lt;&lt;value object&gt;&gt;
+</panel_attributes><additional_attributes>10;150;10;120;110;120;110;10;60;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1128</x><y>264</y><w>88</w><h>56</h></coordinates><panel_attributes>&lt;&lt;value object&gt;&gt;
 CustomerId
 -
 id: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>976</x><y>272</y><w>168</w><h>40</h></coordinates><panel_attributes>lt=&lt;-
@@ -54,9 +55,9 @@ TrunkAccessToken
 -
 token: String {unique}
 validFrom: DateTime
-validUntil: DateTime</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>592</x><y>192</y><w>40</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+validUntil: DateTime</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>592</x><y>208</y><w>40</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
-m2=0..1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>824</x><y>392</y><w>96</w><h>96</h></coordinates><panel_attributes>&lt;&lt;value object&gt;&gt;
+m2=0..1</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>824</x><y>392</y><w>96</w><h>96</h></coordinates><panel_attributes>&lt;&lt;value object&gt;&gt;
 Engine
 -
 type: String
@@ -118,4 +119,12 @@ position: GeoCoordinates
 trunkLockState: LockState
 doorsLockState: LockState
 engineState: EngineState</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>24</y><w>152</w><h>24</h></coordinates><panel_attributes>RentalManagement v1.0</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>32</x><y>216</y><w>112</w><h>40</h></coordinates><panel_attributes>For use in car status
-of Fleet Manager</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>48</x><y>112</y><w>72</w><h>120</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;130;10;10;70;10</additional_attributes></element></diagram>
+of Fleet Manager</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>48</x><y>112</y><w>72</w><h>120</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;130;10;10;70;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1136</x><y>144</y><w>88</w><h>72</h></coordinates><panel_attributes>&lt;&lt;enumeration&gt;&gt;
+State
+-
+UPCOMING
+ACTIVE
+EXPIRED</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>944</x><y>104</y><w>208</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+m2=*
+is &gt;</panel_attributes><additional_attributes>240;80;160;80;160;20;70;20;130;20;10;20</additional_attributes></element></diagram>
