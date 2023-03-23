@@ -6,7 +6,7 @@ state: State
 customer: Customer
 startDate: DateTime
 endDate: DateTime
-trunkAccessToke: TrunkAcessToken
+trunkAccessToken: TrunkAcessToken
 -
 grantTrunkAccess(validFrom: DateTime, validUntil: DateTime): TrunkAccessToken
 _getOverview(rentee: Customer): Rental[]_
